@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "email": "kiran@gmail.com",
+      "password": "$2b$10$rhx6vatMZK.61ruxb9zpUuwFMIhpqRgyvUf.207Oc6FPRtvKUl/zO",
+      "firstName": "Kiran",
+      "lastName": "kumar",
+      "role": "USER"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Introduction to GraphQL",
+      "description": "",
+      "author": 1
+    },
+    {
+      "id": 2,
+      "title": "Introduction to Apollo Client",
+      "description": "",
+      "author": 1
+    },
+    {
+      "id": 3,
+      "title": "Introduction to React",
+      "description": "",
+      "author": 2
+    },
+    {
+      "id": 4,
+      "title": "sample port",
+      "author": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "Thanks",
+      "post": 1,
+      "author": 1
+    }
+  ]
+}
