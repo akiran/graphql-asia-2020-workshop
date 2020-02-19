@@ -27,7 +27,8 @@ export function getComments(postId) {
   return comments.filter(comment => comment.post === postId);
 }
 
-export function signup(user, { res }) {
+export function signup(args, { res }) {
+  const user = args.input;
   const users = getUsers();
   const salt = bcrypt.genSaltSync(10);
   const newUser = {
@@ -45,7 +46,8 @@ export function signup(user, { res }) {
   return true;
 }
 
-export function login(user, { res }) {
+export function login(args, { res }) {
+  const user = args.input;
   const users = getUsers();
   const foundUser = users.find(u => u.email === user.email);
   if (foundUser && bcrypt.compareSync(user.password, foundUser.password)) {

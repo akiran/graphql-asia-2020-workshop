@@ -34,18 +34,25 @@ const typeDefs = gql`
     published: Boolean
   }
 
+  input SignupInput {
+    email: String!
+    password: String!
+    firstName: String
+    lastName: String
+    role: Role
+  }
+
+  input LoginInput {
+    email: String!
+    password: String!
+  }
+
   type Mutation {
-    signup(
-      email: String!
-      password: String!
-      firstName: String
-      lastName: String
-      role: Role
-    ): Boolean
-    login(email: String!, password: String!): Boolean
+    signup(input: SignupInput!): Boolean
+    login(input: LoginInput!): Boolean
     logout: Boolean
     createPost(title: String, description: String, author: Int): Post
-    publishPost(id: Int): Boolean @auth(requires: ADMIN)
+    publishPost(id: Int): Boolean @auth(requires: USER)
     createComment(text: String!, post: Int!, author: Int!): Comment
   }
 
