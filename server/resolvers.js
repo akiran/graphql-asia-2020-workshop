@@ -27,6 +27,14 @@ const resolvers = {
       return getProduct(cartItem.productId);
     }
   },
+  Order: {
+    user: (order, args, ctx) => {
+      return getUser(order.userId);
+    },
+    product: (order, args, ctx) => {
+      return getProduct(order.productId);
+    }
+  },
   Query: {
     ping: () => true,
     me: (_, args, ctx) => {

@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import uuid from "uuid";
 import { JWT_SECRET } from "./config";
 import db from "./db";
 import pubsub from "./pubsub";
@@ -35,7 +36,7 @@ export function getOrders(userId) {
 export function addToCart(args, ctx) {
   const cartItems = db.get("cartItems");
   const newCartItem = {
-    id: cartItems.length + 1,
+    id: uuid.v4(),
     userId: ctx.user.id,
     productId: args.input.productId,
     quantity: args.input.quantity || 1
@@ -59,9 +60,11 @@ export function placeOrder(args, ctx) {
     quantity: cartItem.quantity,
     productId: cartItem.productId,
     userId: ctx.user.id,
-    id: orders.length + index + 1
+    id: uuid.v4(),
+    status: "placed"
   }));
   db.set("orders", orders.concat(newOrders));
+  emptyCart(args, ctx);
   return newOrders;
 }
 
@@ -70,7 +73,7 @@ export function signup(args, { res }) {
   const users = getUsers();
   const salt = bcrypt.genSaltSync(10);
   const newUser = {
-    id: users.length + 1,
+    id: uuid.v4(),
     ...user,
     password: bcrypt.hashSync(user.password, salt)
   };

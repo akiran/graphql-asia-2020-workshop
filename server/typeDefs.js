@@ -11,7 +11,7 @@ const typeDefs = gql`
   directive @auth(requires: Role = ADMIN) on OBJECT | FIELD_DEFINITION
 
   type User {
-    id: Int!
+    id: ID!
     email: String
     firstName: String
     lastName: String
@@ -20,24 +20,25 @@ const typeDefs = gql`
   }
 
   type Product {
-    id: Int!
+    id: ID!
     name: String!
     description: String
     price: Float!
   }
 
   type CartItem {
-    id: Int!
+    id: ID!
     user: User!
     product: Product!
     quantity: Int!
   }
 
   type Order {
-    id: Int!
+    id: ID!
     user: User!
     product: Product!
     quantity: Int!
+    status: String!
   }
 
   input SignupInput {
@@ -54,7 +55,7 @@ const typeDefs = gql`
   }
 
   input AddToCartInput {
-    productId: Int!
+    productId: ID!
     quantity: Int
   }
 
@@ -71,7 +72,7 @@ const typeDefs = gql`
     ping: Boolean
     me: User
     products: [Product]
-    product(id: Int!): Product
+    product(id: ID!): Product
     cartItems: [CartItem]
     orders: [Order]
   }

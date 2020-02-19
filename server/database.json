@@ -1,22 +1,30 @@
 {
     "users": [
         {
-            "id": 1,
+            "id": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
             "email": "kiran@gmail.com",
-            "password": "$2b$10$rhx6vatMZK.61ruxb9zpUuwFMIhpqRgyvUf.207Oc6FPRtvKUl/zO",
+            "password": "$2b$10$32ecE.5iUdBesapZeBPQGe3nNJaM.nlkoV5Dh7ScwcSX.t2BeK5sS",
             "firstName": "Kiran",
-            "lastName": "kumar",
+            "lastName": "Kumar",
             "role": "USER"
         }
     ],
     "products": [
         {
-            "id": 1,
+            "id": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
             "name": "macbook pro",
             "description": "New macbook pro with 64GB RAM",
             "price": 5000
         }
     ],
     "cartItems": [],
-    "orders": []
+    "orders": [
+        {
+            "quantity": 5,
+            "productId": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
+            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
+            "id": "9104bdee-8179-48e7-a485-3f5f7fb2c2d7",
+            "status": "placed"
+        }
+    ]
 }
