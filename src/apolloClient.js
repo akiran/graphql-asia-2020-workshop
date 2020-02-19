@@ -6,8 +6,11 @@ import { SubscriptionClient } from "subscriptions-transport-ws";
 import { ApolloLink, split } from "apollo-link";
 import { getMainDefinition } from "apollo-utilities";
 
-const httpLink = createHttpLink({ uri: "http://localhost:4000/graphql" });
-const wsClient = new SubscriptionClient("ws://localhost:4000/graphql", {
+const httpLink = createHttpLink({
+  uri: "http://localhost:3000/graphql",
+  credentials: "same-origin"
+});
+const wsClient = new SubscriptionClient("ws://localhost:3000/subscriptions", {
   reconnect: true,
   connectionParams: {}
 });

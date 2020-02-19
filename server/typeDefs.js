@@ -60,8 +60,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    signup(input: SignupInput!): Boolean
-    login(input: LoginInput!): Boolean
+    signup(input: SignupInput!): String
+    login(input: LoginInput!): String
     logout: Boolean
     addToCart(input: AddToCartInput!): CartItem
     emptyCart: Boolean

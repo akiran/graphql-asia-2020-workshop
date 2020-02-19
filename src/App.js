@@ -5,6 +5,7 @@ import client from "./apolloClient";
 import Header from "./Header";
 import Products from "./Products";
 import Login from "./Login";
+import Signup from "./Signup";
 import Cart from "./Cart";
 import Orders from "./Orders";
 import { Container } from "reactstrap";
@@ -16,13 +17,16 @@ function App() {
       <Router>
         <div>
           <Header />
-          <Container>
+          <Container className="my-5">
             <Switch>
               <Route exact path="/">
                 <Products />
               </Route>
               <Route exact path="/login">
                 <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
               </Route>
               <Route exact path="/cart">
                 <Cart />

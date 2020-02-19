@@ -84,7 +84,7 @@ export function signup(args, { res }) {
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24 // 1 day
   });
-  return true;
+  return token;
 }
 
 export function login(args, { res }) {
@@ -97,7 +97,7 @@ export function login(args, { res }) {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24 // 1 day
     });
-    return true;
+    return token;
   }
   throw new Error("Not Authroized");
 }
