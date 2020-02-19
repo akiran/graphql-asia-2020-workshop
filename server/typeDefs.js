@@ -19,17 +19,25 @@ const typeDefs = gql`
     role: Role
   }
 
-  type Comment {
-    id: Int!
-    text: String
-    author: User
-  }
-
   type Product {
     id: Int!
     name: String!
     description: String
     price: Float!
+  }
+
+  type CartItem {
+    id: Int!
+    user: User!
+    product: Product!
+    quantity: Int!
+  }
+
+  type Order {
+    id: Int!
+    user: User!
+    product: Product!
+    quantity: Int!
   }
 
   input SignupInput {
@@ -45,10 +53,18 @@ const typeDefs = gql`
     password: String!
   }
 
+  input AddToCartInput {
+    productId: Int!
+    quantity: Int
+  }
+
   type Mutation {
     signup(input: SignupInput!): Boolean
     login(input: LoginInput!): Boolean
     logout: Boolean
+    addToCart(input: AddToCartInput!): CartItem
+    emptyCart: Boolean
+    placeOrder: [Order]
   }
 
   type Query {
@@ -56,6 +72,8 @@ const typeDefs = gql`
     me: User
     products: [Product]
     product(id: Int!): Product
+    cartItems: [CartItem]
+    orders: [Order]
   }
 `;
 

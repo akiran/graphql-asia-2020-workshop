@@ -1,20 +1,22 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "email": "kiran@gmail.com",
-      "password": "$2b$10$rhx6vatMZK.61ruxb9zpUuwFMIhpqRgyvUf.207Oc6FPRtvKUl/zO",
-      "firstName": "Kiran",
-      "lastName": "kumar",
-      "role": "USER"
-    }
-  ],
-  "products": [
-    {
-      "id": 1,
-      "name": "macbook pro",
-      "description": "New macbook pro with 64GB RAM",
-      "price": 5000
-    }
-  ]
+    "users": [
+        {
+            "id": 1,
+            "email": "kiran@gmail.com",
+            "password": "$2b$10$rhx6vatMZK.61ruxb9zpUuwFMIhpqRgyvUf.207Oc6FPRtvKUl/zO",
+            "firstName": "Kiran",
+            "lastName": "kumar",
+            "role": "USER"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "macbook pro",
+            "description": "New macbook pro with 64GB RAM",
+            "price": 5000
+        }
+    ],
+    "cartItems": [],
+    "orders": []
 }
