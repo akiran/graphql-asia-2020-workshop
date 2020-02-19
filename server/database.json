@@ -9,37 +9,12 @@
       "role": "USER"
     }
   ],
-  "posts": [
+  "products": [
     {
       "id": 1,
-      "title": "Introduction to GraphQL",
-      "description": "",
-      "author": 1
-    },
-    {
-      "id": 2,
-      "title": "Introduction to Apollo Client",
-      "description": "",
-      "author": 1
-    },
-    {
-      "id": 3,
-      "title": "Introduction to React",
-      "description": "",
-      "author": 2
-    },
-    {
-      "id": 4,
-      "title": "sample port",
-      "author": 2
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "text": "Thanks",
-      "post": 1,
-      "author": 1
+      "name": "macbook pro",
+      "description": "New macbook pro with 64GB RAM",
+      "price": 5000
     }
   ]
 }
