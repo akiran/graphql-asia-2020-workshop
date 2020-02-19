@@ -8,6 +8,8 @@ const PRODUCTS_QUERY = gql`
     products {
       id
       name
+      description
+      price
     }
   }
 `;
