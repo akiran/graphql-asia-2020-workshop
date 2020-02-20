@@ -1,9 +1,23 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery, useSubscription } from "@apollo/react-hooks";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 import { ORDERS_QUERY } from "./queries";
+import gql from "graphql-tag";
+
+const ORDER_STATUS = gql`
+  subscription orderStatusChange($id: ID!) {
+    onOrderStatusChange(id: $id) {
+      id
+      status
+    }
+  }
+`;
 
 export function OrderItem({ order }) {
+  const { data } = useSubscription(ORDER_STATUS, {
+    variables: { id: order.id }
+  });
+  console.log(data);
   return (
     <div>
       <Card>

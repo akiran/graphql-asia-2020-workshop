@@ -78,7 +78,7 @@ const typeDefs = gql`
   }
 
   type Subscription {
-    onOrderStatusChange: Order
+    onOrderStatusChange(id: ID!): Order
   }
 `;
 

@@ -9,9 +9,11 @@ import {
   logout,
   addToCart,
   emptyCart,
-  placeOrder
+  placeOrder,
+  getOrder
 } from "./connectors";
 import pubsub from "./pubsub";
+import { withFilter } from "graphql-subscriptions";
 
 const resolvers = {
   User: {
@@ -36,7 +38,13 @@ const resolvers = {
     }
   },
   Query: {
-    ping: () => true,
+    ping: () => {
+      console.log("ping");
+      pubsub.publish("ON_ORDER_STATUS_CHANGE", {
+        id: "733912d2-4096-4eec-870d-2de3c0c3aa1d"
+      });
+      return true;
+    },
     me: (_, args, ctx) => {
       if (!ctx.user) {
         throw new Error("Not logged in");
@@ -59,9 +67,15 @@ const resolvers = {
   Subscription: {
     onOrderStatusChange: {
       resolve(payload, args, ctx) {
-        return payload;
+        console.log(payload, args);
+        return getOrder(args.id);
       },
-      subscribe: () => pubsub.asyncIterator("ON_ORDER_STATUS_CHANGE")
+      subscribe: withFilter(
+        () => pubsub.asyncIterator("ON_ORDER_STATUS_CHANGE"),
+        (payload, variables) => {
+          return payload.id === variables.id;
+        }
+      )
     }
   }
 };

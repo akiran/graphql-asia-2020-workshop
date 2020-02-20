@@ -68,6 +68,11 @@ export function placeOrder(args, ctx) {
   return newOrders;
 }
 
+export function getOrder(id) {
+  const orders = db.get("orders");
+  return orders.find(order => order.id === id);
+}
+
 export function signup(args, { res }) {
   const user = args.input;
   const users = getUsers();
