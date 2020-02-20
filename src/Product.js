@@ -14,7 +14,6 @@ const ADD_TO_CART_MUTATION = gql`
 `;
 
 export default function Product({ product }) {
-  console.log(product);
   const history = useHistory();
   const [addToCart, { error: addToCartError }] = useMutation(
     ADD_TO_CART_MUTATION,

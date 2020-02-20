@@ -53,6 +53,15 @@ export function emptyCart(args, ctx) {
   db.set("cartItems", newCartItems);
 }
 
+export function deleteCartItem(args, ctx) {
+  const cartItems = db.get("cartItems");
+  const newCartItems = cartItems.filter(
+    cartItem => cartItem.id !== args.input.id
+  );
+  db.set("cartItems", newCartItems);
+  return args.input.id;
+}
+
 export function placeOrder(args, ctx) {
   const cartItems = getCartItems(ctx.user.id);
   const orders = db.get("orders");

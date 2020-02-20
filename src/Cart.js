@@ -4,6 +4,7 @@ import gql from "graphql-tag";
 import { useHistory } from "react-router-dom";
 import { Card, CardText, CardBody, CardTitle, Button } from "reactstrap";
 import { ORDERS_QUERY, CART_QUERY } from "./queries";
+import DeleteCart from "./DeleteCart";
 
 const PLACE_ORDER_MUTATION = gql`
   mutation {
@@ -27,6 +28,7 @@ export function CartItem({ cartItem }) {
           <CardText>
             Total: ${cartItem.product.price * cartItem.quantity}
           </CardText>
+          <DeleteCart cartItem={cartItem} />
         </CardBody>
       </Card>
     </div>

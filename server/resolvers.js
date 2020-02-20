@@ -9,6 +9,7 @@ import {
   logout,
   addToCart,
   emptyCart,
+  deleteCartItem,
   placeOrder,
   getOrder,
   updateOrderStatus
@@ -40,10 +41,6 @@ const resolvers = {
   },
   Query: {
     ping: () => {
-      console.log("ping");
-      pubsub.publish("ON_ORDER_STATUS_CHANGE", {
-        id: "733912d2-4096-4eec-870d-2de3c0c3aa1d"
-      });
       return true;
     },
     me: (_, args, ctx) => {
@@ -63,6 +60,7 @@ const resolvers = {
     logout: (_, args, ctx) => logout(ctx),
     addToCart: (_, args, ctx) => addToCart(args, ctx),
     emptyCart: (_, args, ctx) => emptyCart(args, ctx),
+    deleteCartItem: (_, args, ctx) => deleteCartItem(args, ctx),
     placeOrder: (_, args, ctx) => placeOrder(args, ctx),
     updateOrderStatus: (_, args, ctx) => updateOrderStatus(args, ctx)
   },

@@ -64,11 +64,16 @@ const typeDefs = gql`
     status: String
   }
 
+  input DeleteCartItemInput {
+    id: ID!
+  }
+
   type Mutation {
     signup(input: SignupInput!): String
     login(input: LoginInput!): String
     logout: Boolean
     addToCart(input: AddToCartInput!): CartItem
+    deleteCartItem(input: DeleteCartItemInput!): ID
     emptyCart: Boolean
     placeOrder: [Order]
     updateOrderStatus(input: UpdateOrderStatusInput!): Order
