@@ -8,3 +8,17 @@ export const ME_QUERY = gql`
     }
   }
 `;
+
+export const CART_QUERY = gql`
+  query cartQuery {
+    cartItems {
+      id
+      product {
+        id
+        name
+        price
+      }
+      quantity
+    }
+  }
+`;

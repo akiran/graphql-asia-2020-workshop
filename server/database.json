@@ -1,42 +1,55 @@
 {
-  "users": [
-    {
-      "id": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
-      "email": "kiran@gmail.com",
-      "password": "$2b$10$32ecE.5iUdBesapZeBPQGe3nNJaM.nlkoV5Dh7ScwcSX.t2BeK5sS",
-      "firstName": "Kiran",
-      "lastName": "Kumar",
-      "role": "USER"
-    }
-  ],
-  "products": [
-    {
-      "id": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
-      "name": "macbook pro",
-      "description": "New macbook pro with 64GB RAM",
-      "price": 5000
-    },
-    {
-      "id": "da77d20a-d268-40db-967d-c54e94dc05dc",
-      "name": "Keyboard",
-      "description": "Slim keyboard",
-      "price": 100
-    },
-    {
-      "id": "9bb6e89f-a305-4475-ae4a-8e4a8e488e8e",
-      "name": "Mouse",
-      "description": "Wireless mouse",
-      "price": 20
-    }
-  ],
-  "cartItems": [],
-  "orders": [
-    {
-      "quantity": 5,
-      "productId": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
-      "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
-      "id": "9104bdee-8179-48e7-a485-3f5f7fb2c2d7",
-      "status": "placed"
-    }
-  ]
+    "users": [
+        {
+            "id": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
+            "email": "kiran@gmail.com",
+            "password": "$2b$10$32ecE.5iUdBesapZeBPQGe3nNJaM.nlkoV5Dh7ScwcSX.t2BeK5sS",
+            "firstName": "Kiran",
+            "lastName": "Kumar",
+            "role": "USER"
+        }
+    ],
+    "products": [
+        {
+            "id": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
+            "name": "macbook pro",
+            "description": "New macbook pro with 64GB RAM",
+            "price": 5000
+        },
+        {
+            "id": "da77d20a-d268-40db-967d-c54e94dc05dc",
+            "name": "Keyboard",
+            "description": "Slim keyboard",
+            "price": 100
+        },
+        {
+            "id": "9bb6e89f-a305-4475-ae4a-8e4a8e488e8e",
+            "name": "Mouse",
+            "description": "Wireless mouse",
+            "price": 20
+        }
+    ],
+    "cartItems": [
+        {
+            "id": "b119a24e-4c70-4d17-b020-6794d34deb62",
+            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
+            "productId": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
+            "quantity": 1
+        },
+        {
+            "id": "7faab37d-dd0b-4909-9384-5901af529fee",
+            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
+            "productId": "da77d20a-d268-40db-967d-c54e94dc05dc",
+            "quantity": 1
+        }
+    ],
+    "orders": [
+        {
+            "quantity": 5,
+            "productId": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
+            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
+            "id": "9104bdee-8179-48e7-a485-3f5f7fb2c2d7",
+            "status": "placed"
+        }
+    ]
 }
