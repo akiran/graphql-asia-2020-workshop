@@ -22,3 +22,18 @@ export const CART_QUERY = gql`
     }
   }
 `;
+
+export const ORDERS_QUERY = gql`
+  query ordersQuery {
+    orders {
+      id
+      product {
+        id
+        name
+        price
+      }
+      quantity
+      status
+    }
+  }
+`;
