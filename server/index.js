@@ -76,7 +76,7 @@ app.use(
     ].join(" ");
   })
 );
-graphql.applyMiddleware({ app });
+graphql.applyMiddleware({ app, path: "/" });
 const server = http.createServer(app);
 graphql.installSubscriptionHandlers(server);
 
