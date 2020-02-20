@@ -23,7 +23,7 @@ const LOGOUT_MUTATION = gql`
 export default function Header() {
   const { data } = useQuery(ME_QUERY);
   const [logout] = useMutation(LOGOUT_MUTATION, {
-    onCompleted: () => (location.href = "/")
+    onCompleted: () => (window.location.href = "/")
   });
   return (
     <div>

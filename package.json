@@ -34,15 +34,7 @@
     "subscriptions-transport-ws": "^0.9.16",
     "uuid": "^3.4.0"
   },
-  "proxy": {
-    "/graphql": {
-      "target": "http://localhost:4000"
-    },
-    "/subscriptions": {
-      "target": "ws://localhost:4000",
-      "ws": true
-    }
-  },
+  "proxy": "http://localhost:4000",
   "scripts": {
     "server": "nodemon --exec 'node -r esm' --watch 'server/**/*.js' ./server/index.js",
     "start": "react-scripts start",

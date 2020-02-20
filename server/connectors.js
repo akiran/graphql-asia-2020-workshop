@@ -75,6 +75,7 @@ export function signup(args, { res }) {
   const newUser = {
     id: uuid.v4(),
     ...user,
+    role: user.role || "USER",
     password: bcrypt.hashSync(user.password, salt)
   };
   const token = jwt.sign({ id: newUser.id }, JWT_SECRET);
