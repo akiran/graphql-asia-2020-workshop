@@ -17,7 +17,6 @@ export function OrderItem({ order }) {
   const { data } = useSubscription(ORDER_STATUS, {
     variables: { id: order.id }
   });
-  console.log(data);
   return (
     <div>
       <Card>

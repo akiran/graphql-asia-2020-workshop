@@ -59,6 +59,11 @@ const typeDefs = gql`
     quantity: Int
   }
 
+  input UpdateOrderStatusInput {
+    id: ID!
+    status: String
+  }
+
   type Mutation {
     signup(input: SignupInput!): String
     login(input: LoginInput!): String
@@ -66,6 +71,7 @@ const typeDefs = gql`
     addToCart(input: AddToCartInput!): CartItem
     emptyCart: Boolean
     placeOrder: [Order]
+    updateOrderStatus(input: UpdateOrderStatusInput!): Order
   }
 
   type Query {

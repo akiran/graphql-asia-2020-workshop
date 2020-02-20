@@ -73,6 +73,19 @@ export function getOrder(id) {
   return orders.find(order => order.id === id);
 }
 
+export function updateOrderStatus(args, ctx) {
+  const order = args.input;
+  const orders = db.get("orders");
+  const newOrders = orders.map(o =>
+    o.id === order.id ? { ...o, status: order.status } : o
+  );
+  db.set("orders", newOrders);
+  pubsub.publish("ON_ORDER_STATUS_CHANGE", {
+    id: order.id
+  });
+  return getOrder(order.id);
+}
+
 export function signup(args, { res }) {
   const user = args.input;
   const users = getUsers();

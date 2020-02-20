@@ -10,7 +10,8 @@ import {
   addToCart,
   emptyCart,
   placeOrder,
-  getOrder
+  getOrder,
+  updateOrderStatus
 } from "./connectors";
 import pubsub from "./pubsub";
 import { withFilter } from "graphql-subscriptions";
@@ -62,7 +63,8 @@ const resolvers = {
     logout: (_, args, ctx) => logout(ctx),
     addToCart: (_, args, ctx) => addToCart(args, ctx),
     emptyCart: (_, args, ctx) => emptyCart(args, ctx),
-    placeOrder: (_, args, ctx) => placeOrder(args, ctx)
+    placeOrder: (_, args, ctx) => placeOrder(args, ctx),
+    updateOrderStatus: (_, args, ctx) => updateOrderStatus(args, ctx)
   },
   Subscription: {
     onOrderStatusChange: {
