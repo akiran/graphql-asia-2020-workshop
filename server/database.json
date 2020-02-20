@@ -32,31 +32,10 @@
     "cartItems": [],
     "orders": [
         {
-            "quantity": 5,
-            "productId": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
-            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
-            "id": "9104bdee-8179-48e7-a485-3f5f7fb2c2d7",
-            "status": "placed"
-        },
-        {
             "quantity": 1,
             "productId": "7f062f38-c07d-4e8d-b5c8-80a365f003cd",
             "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
-            "id": "47a0d5ee-43d2-4478-898d-9b43a45f268c",
-            "status": "placed"
-        },
-        {
-            "quantity": 1,
-            "productId": "da77d20a-d268-40db-967d-c54e94dc05dc",
-            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
-            "id": "0f8e3b00-379f-4735-bfea-5866f2874d39",
-            "status": "placed"
-        },
-        {
-            "quantity": 1,
-            "productId": "da77d20a-d268-40db-967d-c54e94dc05dc",
-            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
-            "id": "f45075fc-9330-42e5-b83e-60976dbec0fa",
+            "id": "733912d2-4096-4eec-870d-2de3c0c3aa1d",
             "status": "placed"
         }
     ]
