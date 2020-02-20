@@ -11,7 +11,7 @@ import {
   emptyCart,
   placeOrder
 } from "./connectors";
-// import pubsub from "./pubsub";
+import pubsub from "./pubsub";
 
 const resolvers = {
   User: {
@@ -55,15 +55,15 @@ const resolvers = {
     addToCart: (_, args, ctx) => addToCart(args, ctx),
     emptyCart: (_, args, ctx) => emptyCart(args, ctx),
     placeOrder: (_, args, ctx) => placeOrder(args, ctx)
+  },
+  Subscription: {
+    onOrderStatusChange: {
+      resolve(payload, args, ctx) {
+        return payload;
+      },
+      subscribe: () => pubsub.asyncIterator("ON_ORDER_STATUS_CHANGE")
+    }
   }
-  // Subscription: {
-  //   onNewPost: {
-  //     resolve(payload, args, ctx) {
-  //       return payload;
-  //     },
-  //     subscribe: () => pubsub.asyncIterator("ON_NEW_POST")
-  //   }
-  // }
 };
 
 export default resolvers;

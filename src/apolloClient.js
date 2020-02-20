@@ -10,7 +10,7 @@ const httpLink = createHttpLink({
   uri: "http://localhost:3000/graphql",
   credentials: "same-origin"
 });
-const wsClient = new SubscriptionClient("ws://localhost:3000/subscriptions", {
+const wsClient = new SubscriptionClient("ws://localhost:4000/graphql", {
   reconnect: true,
   connectionParams: {}
 });

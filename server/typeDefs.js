@@ -76,6 +76,10 @@ const typeDefs = gql`
     cartItems: [CartItem]
     orders: [Order]
   }
+
+  type Subscription {
+    onOrderStatusChange: Order
+  }
 `;
 
 export default typeDefs;
