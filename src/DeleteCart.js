@@ -12,7 +12,19 @@ const DELETE_CART_MUTATION = gql`
 
 export default function DeleteCartItem({ cartItem }) {
   const [deleteCart] = useMutation(DELETE_CART_MUTATION, {
-    refetchQueries: [{ query: CART_QUERY }],
+    // refetchQueries: [{ query: CART_QUERY }],
+    optimisticResponse: {
+      __typename: "Mutation",
+      deleteCartItem: cartItem.id
+    },
+    update: (cache, { data: { deleteCartItem } }) => {
+      console.log("update", deleteCartItem);
+      const { cartItems } = cache.readQuery({ query: CART_QUERY });
+      cache.writeQuery({
+        query: CART_QUERY,
+        data: { cartItems: cartItems.filter(c => c.id !== deleteCartItem) }
+      });
+    },
     onCompleted: () => null,
     onError: () => null
   });

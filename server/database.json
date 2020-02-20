@@ -29,14 +29,7 @@
             "price": 20
         }
     ],
-    "cartItems": [
-        {
-            "id": "85b3adc7-96e9-4fcc-8d6c-d55136050cbe",
-            "userId": "b9339c19-10b1-4bb4-8051-92aa8d0fde15",
-            "productId": "da77d20a-d268-40db-967d-c54e94dc05dc",
-            "quantity": 1
-        }
-    ],
+    "cartItems": [],
     "orders": [
         {
             "quantity": 1,
